@@ -3,75 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <title>Коттеджный поселок в Петергофе</title>
+
+    <link href="css/normalize.css" rel="stylesheet"> <!-- Подключать ДО основных стилей -->
+    <link href="css/hamburgers.css" rel="stylesheet"> <!-- Подключать ДО основных стилей -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
 </head>
 <body>
-    <header class="main-header">
-        <nav class="main-navigation">
-            <a href="/" class="main-header-logo">
-                <img src="img/index-logo.svg" alt="Логотип усадьбы в Петергофе">
-                Усадьба в Петергофе
-            </a>
-            <ul class="left-navigation">
-                <li>
-                    <a href="#">Генплан</a>
-                </li>
-                <li>
-                    <a href="#">О компании</a>
-                </li>
-                <li>
-                    <a href="#">Контакты</a>
-                </li>
-            </ul>
+<div class="main-wrapper">
+    <div class="modal modal-menu">
+        <div class="top-block">
             <div class="phone-block">
                 <p class="phone-block__subtitle">
-                    +7(812)906-25-25
+                    +7(812) 906-25-25
                 </p>
                 <p class="phone-block__time">
                     10:00 - 18:45
                 </p>
             </div>
-            <ul class="right-navigation burger">
-                <li>
-                    <a href="#">Особенности</a>
-                </li>
-                <li>
-                    <a href="#">О посёлке</a>
-                </li>
-                <li>
-                    <a href="#">Расположение</a>
-                </li>
-                <li>
-                    <a href="#">Генплан</a>
-                </li>
-                <li>
-                    <a href="#">Новости</a>
-                </li>
-                <li>
-                    <a href="#">Спецпредложения</a>
-                </li>
-                <li>
-                    <a href="#">Фотогалерея</a>
-                </li>
-                <li>
-                    <a href="#">Контакты</a>
-                </li>
-            </ul>
-            <div class="footer-block">
-                <p>Политика конфиденциальности</p>
-                <p>© 2019 «Усадьбы в Петергофе»</p>
-                <p>Сделано в Ra-Studio</p>
+            <button class="hamburger hamburger--squeeze hamburger-header" type="button">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+            </button>
+        </div>
+        <ul class="right-navigation burger">
+            <li>
+                <a href="#">Особенности</a>
+            </li>
+            <li>
+                <a href="#">О посёлке</a>
+            </li>
+            <li>
+                <a href="#">Расположение</a>
+            </li>
+            <li>
+                <a href="#">Генплан</a>
+            </li>
+            <li>
+                <a href="#">Новости</a>
+            </li>
+            <li>
+                <a href="#">Спецпредложения</a>
+            </li>
+            <li>
+                <a href="#">Фотогалерея</a>
+            </li>
+            <li>
+                <a href="#">Контакты</a>
+            </li>
+        </ul>
+        <div class="footer-block">
+            <p>Политика конфиденциальности</p>
+            <p>© 2019 «Усадьбы в Петергофе»</p>
+            <p>Сделано в Ra-Studio</p>
+        </div>
+    </div>
+    <header class="main-header">
+        <nav class="main-navigation">
+            <div class="logo-wrapper">
+                <a href="/" class="main-header-logo">
+                    <img src="img/logo.png" alt="Логотип усадьбы в Петергофе" width="151" height="64">
+                </a>
+            </div>
+            <div class="main-navigation-wrapper">
+                <ul class="left-navigation">
+                    <li>
+                        <a href="#">Генплан</a>
+                    </li>
+                    <li>
+                        <a href="#">О компании</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+                <div class="main-navigation-right-block">
+                    <div class="phone-block">
+                        <p class="phone-block__subtitle">
+                            +7(812) 906-25-25
+                        </p>
+                        <p class="phone-block__time">
+                            10:00 - 18:45
+                        </p>
+                    </div>
+                    <button class="hamburger hamburger--squeeze hamburger-header" type="button">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
-    <main class="container">
-        <h1>Коттеджный посёлок <b>в Петергофе</b></h1>
-        <p>Отличное место на южном берегу Финского залива для Вашего загородного дома или ближней дачи</p>
-        <a href="#" class="area-selection">Выбрать участок</a>
-        <p class="selection-text">от 120 тыс. руб.</p>
-        <section class="">
+    <div class="left-wrapper">
+        <div class="left-wrapper-text">
+            <h1 class="main-title">Коттеджный посёлок <b>в Петергофе</b></h1>
+            <p class="text-block">Отличное место на южном берегу Финского залива для Вашего загородного дома или ближней дачи</p>
+        </div>
+        <div class="footer-wrapper">
+            <a href="#" class="button button-area-selection">Выбрать участок</a>
+            <p class="selection-text">от 120 тыс. руб.</p>
+        </div>
+    </div>
+    <div class="right-wrapper">
+        <div class="bottom-text-block">
             <h2>Природа рядом</h2>
             <p>Лес, приятный для прогулок, сбора грибов и ягод. Луга с целебными травами, 10 минут на автомобиле, и Вы на Заливе или гуляете в Петергофских парках с фонтанами и музеями.</p>
-        </section>
-    </main>
+        </div>
+    </div>
+</div>
 </body>
 </html>
