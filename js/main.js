@@ -3,7 +3,8 @@ $(document).ready(function () {
         let modalMenu = $(".modal-menu");
         console.log(modalMenu);
         modalMenu.toggleClass( "flex" );
-        if (modalMenu.hasClass("flex")) {
+        $( ".modal-menu .hamburger" ).toggleClass( "is-active" );
+        if (modalMenu.hasClass("flex") && $(window).width() < 500) {
             $(".logo-wrapper").css("z-index", "0");
         } else {
             $(".logo-wrapper").css("z-index", "10");
