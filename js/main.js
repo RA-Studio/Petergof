@@ -73,6 +73,14 @@ $(document).ready(function () {
             $(".logo-wrapper").css("z-index", "10");
         }
     });
+    var calendar = $('.calendar');
+    calendar.on('click', function () {
+        calendar.datepicker({inline: false}).data('datepicker');
+    });
+
+
+
+
 });
 function resizewindow() {
     if(screen.width < 769) {

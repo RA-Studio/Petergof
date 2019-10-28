@@ -34,6 +34,43 @@ body {
 a {
     text-decoration: none;
 }
+/* yandex map styles */
+
+
+.map-popup-wrapper {
+    background-color: #FCFCFC;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #000000;
+    font-family: Bad script, Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    width: 184px;
+    padding: 14px 12px 15px 12px;
+    height: 230px;
+    box-shadow: 3px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.map-popup-wrapper p {
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+.map-popup-wrapper img {
+    display: block;
+    width: 160px;
+}
+
+.map-popup-close {
+    position: absolute;
+    top: 15px;
+    background: url('../img/close-map-icon.svg') no-repeat;
+    display: block;
+    width: 15px;
+    height: 15px;
+    left: 20px;
+    font-size: 0;
+    text-decoration: none;
+}
 
 .right-wrapper {
     overflow: hidden;
@@ -239,14 +276,25 @@ a {
 }
 .description .left-wrapper {
     background-image: url(../img/bg-description-main.png);
+    background-color: #4E541A;
 }
 .features .left-wrapper {
     background-image: url(../img/bg-features1-main.png);
     background-color: #1E3964;
 }
+.location .left-wrapper {
+    background-image: url(../img/bg-location-main.png);
+    background-color: #7E7772;
+}
+.location .right-wrapper {
+    overflow: auto;
+}
+.genplan .left-wrapper {
+    background-image: url(../img/bg-genplan-main.png);
+}
 .right-wrapper {
     display: flex;
-    padding: 80px 20px 27px 28px;
+    padding: 80px 20px 0 20px;
     width: 60%;
     background: #E1ECF1;
     background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 50%), url(../img/bg-main.png) ;
@@ -255,6 +303,16 @@ a {
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
+}
+.right-wrapper .right-wrapper__address {
+    position: relative;
+    width: 55%;
+    margin: 50px 0 30px 40px;
+}
+.right-wrapper .right-wrapper__address svg {
+    position: absolute;
+    top: 6px;
+    left: -40px;
 }
 .inner-wrapper .right-wrapper {
     flex-direction: column;
@@ -278,7 +336,19 @@ a {
     margin-top: 300px;
 }
 .inner-wrapper .left-wrapper-text {
-    margin-top: 270px;
+    margin-top: 320px;
+}
+.left-wrapper-text p {
+    position: relative;
+    margin: 0 0 30px 0;
+    color: #FCFCFC;
+}
+.left-wrapper-text span {
+    margin-left: 40px;
+}
+.left-wrapper-text svg {
+    bottom: 5px;
+    position: absolute;
 }
 .main-title {
     padding: 0;
@@ -289,6 +359,9 @@ a {
     font-weight: bold;
     font-size: 36px;
     line-height: 150%;
+}
+.inner-wrapper .main-title {
+    margin-bottom: 120px;
 }
 .features .left-wrapper {
     background: none;
@@ -344,6 +417,9 @@ a {
     margin-top: auto;
     display: flex;
     align-items: center;
+}
+.location .footer-wrapper {
+    margin-top: 100px;
 }
 .footer-wrapper .button-area-selection {
     display: block;
@@ -474,6 +550,96 @@ a {
     background-size: 100% 0;
     transition: background-size .4s ease-in-out;
 }
+.left-wrapper--sale .left-wrapper-text {
+    margin-top: 180px;
+}
+.left-wrapper--news .left-wrapper-text {
+    margin-top: 180px;
+}
+.right-wrapper--of-auto {
+    overflow: auto;
+}
+.footer-wrapper--mt-100 {
+    margin-top: 100px;
+}
+.right-wrapper__promo {
+    margin-top: 130px;
+}
+.left-wrapper--sale {
+    background-image: url(../img/bg-sale-main.png) !important;
+    background-color: #6E6E6D !important;
+}
+.left-wrapper--news {
+    background-image: url(../img/bg-news-main.png)!important;
+    background-color: #414B4E!important;
+    background-position: 20% center !important;
+}
+.promo {
+    display: flex;
+    flex-direction: column;
+}
+.promo__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.promo__title {
+    font-family: Cormorant, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 150%;
+    color: #4F4F4F;
+    margin: 0;
+}
+.promo__body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -20px;
+}
+.promo__item {
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    justify-content: center;
+    margin: 0 0 20px 20px
+}
+.promo__subtitle {
+    font-family: 'lato-bold', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 125%;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    margin: 25px auto;
+    width: 270px;
+}
+.calendar {
+    width: 168px;
+    padding: 10px 50px 10px 21px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-family: 'lato-regular', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    margin: 0;
+    position: relative;
+    height: 41px;
+}
+.calendar--white {
+    background-color: #FFFFFF;
+    display: flex;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.calendar__icon {
+    position: absolute;
+    right: 15px;
+}
 @media screen and (max-width: 978px) {
     .left-navigation li:not(:last-child) {
         margin-right: 10px;
@@ -489,6 +655,16 @@ a {
     }
 }
 @media screen and (max-width: 768px){
+    .left-wrapper--sale {
+        background-size: 100% auto !important;
+        background-position: right center !important;
+    }
+    .promo__item {
+        width: 345px;
+    }
+    .promo {
+        margin-top: 50px;
+    }
     .left-wrapper-slider .slider-wrapper__item {
         height: 36vh;
         background-position: center;
@@ -654,6 +830,10 @@ a {
         bottom: 20px;
         right: 20px;
         flex-direction: column;
+    }
+    .inner-wrapper .footer-wrapper {
+        margin-top: 50px;
+        position: relative;
     }
     .inner-wrapper .footer-wrapper {
         bottom: 30px;
@@ -856,5 +1036,27 @@ a {
     }
     .features .bottom-text-block p {
         width: 100%;
+    }
+    .promo__title {
+        font-size: 30px;
+    }
+    .promo__body {
+        margin-left: 0;
+    }
+    .promo__item {
+        margin-left: 0;
+        width: 100%;
+    }
+    .promo__img {
+        height: 170px;
+    }
+    .calendar {
+        padding: 9px 41px 9px 13px;
+        font-family: 'lato-regular', Arial, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 150%;
+        width: 140px;
     }
 }
