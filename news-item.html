@@ -5,16 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Особенности</title>
+    <title>Новость</title>
     <link href="css/normalize.css" rel="stylesheet"> <!-- Подключать ДО основных стилей -->
     <link href="css/hamburgers.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
+
     <link href="https://fonts.googleapis.com/css?family=Cormorant:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/datepicker.min.js"></script>
 </head>
-<body class="features-page">
-<div class="inner-wrapper features">
+<body>
+<div class="inner-wrapper news-detail">
     <div class="modal modal-menu">
         <div class="top-block">
             <div class="phone-block">
@@ -99,7 +102,7 @@
             <div class="main-navigation-wrapper">
                 <ul class="left-navigation">
                     <li>
-                        <a href="#">Генплан</a>
+                        <a href="/genplan.html">Генплан</a>
                     </li>
                     <li>
                         <a href="#">О компании</a>
@@ -126,56 +129,36 @@
             </div>
         </nav>
     </header>
-    <div class="left-wrapper">
+    <div class="left-wrapper left-wrapper--news-detail left-wrapper--mgt-180">
         <div class="left-wrapper-text">
-            <h1 class="main-title">Особенности</h1>
-        </div>
-        <div class="left-wrapper-slider">
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features1-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features2-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features3-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features4-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features5-main.png)">
-            </div>
+            <h1 class="main-title">Новость</h1>
         </div>
     </div>
     <div class="right-wrapper">
-        <div class="slider-wrapper">
-            <div class="bottom-text-block slider__item">
-                <h2>Выгодное расположение</h2>
-                <p>С вершины отлично просматривается Пулково, Лахта-сити, кварталы Петербурга, Старый Петергоф, направления к Ораниенбауму, Гостилицам и Низино. До Лугового парка и Дворца Бельведер 5 мин на автомобиле, до Английского парка — 7 минут.</p>
-            </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Земля в статусе ИЖС</h2>
-                <p>Вы сами можете построить дом своей мечты с возможностью местной прописки. Мы продаём участки без подряда на строительство, но будем рады помочь Вам с выбором строителей.</p>
-            </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Центральные коммуникации</h2>
-                <p>В посёлок проведены газовые трубы, вода, канализация и свет, а дороги уложены твёрдым покрытием по финским технологиям.</p>
-            </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Безопасность в приоритете</h2>
-                <p>На охраняеую территорию участков попасть можно только по пропуску, а видеонаблюдение — круглосуточное</p>
-            </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Детские и спортивные площадки</h2>
-                <p>Территория посёлка оборудована несколькими детскими площадками, а в Петергофе для Вас и Вашей семьи в Петергофе работают две детско-юношеских школы олимпийского резерва, ледовая арена и бассейн и конно-спортивная школа</p>
-            </div>
+        <div class="right-wrapper__header right-wrapper__header--reverse">
+            <h2 class="right-wrapper__title">Оплата электроэнергии</h2>
+            <p class="right-wrapper__date">8 апреля 2019</p>
         </div>
-        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        <div class="right-wrapper__body">
+            <section class="news-text">
+                <p class="news-text__p">
+                    Уважаемые жители ИЖС "Усадьба в Петергофе"!
+                </p>
+                <p class="news-text__p">
+                    Авансировать потребление электроэнергии и получать коды для счетчика необходимо в личном кабинете.
+                </p>
+                <p class="news-text__p">
+                    Пользователям: как получить код активации Апатор
+                </p>
+                <p class="news-text__p">
+                    Шаг 1. Оплата нужного количества единиц электроэнергии на нужном тарифе. 1.1 В личном кабинете зайдите в раздел с номером или названием Вашего участка или домовладения, выберите раздел "Счетчики", выберите подраздел "Счетчик Апатор". На открывшейся странице на закладке "Действующие счетчики" нажмите на кнопку "Перейти к авансовой оплате".<br/> Обратите внимание: если у вас одновременно на одном участке используется несколько счетчиков Апатор, они будут показаны на закладке "Действующие счетчики" последовательно. Следует переходить к авансовой оплате именно того счетчика, на "счет" которого вы хотите авансово приобрести мощность. Коды, созданные для разных счетчиков, не взаимозаменяемы!
+                </p>
+            </section>
         </div>
         <div class="footer-wrapper">
             <a href="#" class="button button-area-selection button-white">Выбрать участок</a>
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/main.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script src="slick/slick.js"></script>
 </body>
 </html>

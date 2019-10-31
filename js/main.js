@@ -73,9 +73,13 @@ $(document).ready(function () {
             $(".logo-wrapper").css("z-index", "10");
         }
     });
-    var calendar = $('.calendar');
-    calendar.on('click', function () {
-        calendar.datepicker({inline: false}).data('datepicker');
+    $('#calendar').datepicker({
+        dateFormat: "MM yyyy",
+        view: 'months',
+        minView: 'months',
+        orientation: "bottom left",
+        language: "ru",
+        endDate: new Date(),
     });
 
 

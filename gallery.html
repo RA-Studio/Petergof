@@ -5,16 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Особенности</title>
+    <title>Фотогалерея</title>
     <link href="css/normalize.css" rel="stylesheet"> <!-- Подключать ДО основных стилей -->
     <link href="css/hamburgers.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Cormorant:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </head>
-<body class="features-page">
-<div class="inner-wrapper features">
+<body>
+<div class="inner-wrapper fotogallery">
     <div class="modal modal-menu">
         <div class="top-block">
             <div class="phone-block">
@@ -99,7 +103,7 @@
             <div class="main-navigation-wrapper">
                 <ul class="left-navigation">
                     <li>
-                        <a href="#">Генплан</a>
+                        <a href="/genplan.html">Генплан</a>
                     </li>
                     <li>
                         <a href="#">О компании</a>
@@ -126,56 +130,86 @@
             </div>
         </nav>
     </header>
-    <div class="left-wrapper">
+    <div class="left-wrapper left-wrapper--fotogallery left-wrapper--mgt-180">
         <div class="left-wrapper-text">
-            <h1 class="main-title">Особенности</h1>
-        </div>
-        <div class="left-wrapper-slider">
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features1-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features2-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features3-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features4-main.png)">
-            </div>
-            <div class="slider-wrapper__item" style="background-image: url(/img/bg-features5-main.png)">
-            </div>
+            <h1 class="main-title">Фотогалерея</h1>
         </div>
     </div>
-    <div class="right-wrapper">
-        <div class="slider-wrapper">
-            <div class="bottom-text-block slider__item">
-                <h2>Выгодное расположение</h2>
-                <p>С вершины отлично просматривается Пулково, Лахта-сити, кварталы Петербурга, Старый Петергоф, направления к Ораниенбауму, Гостилицам и Низино. До Лугового парка и Дворца Бельведер 5 мин на автомобиле, до Английского парка — 7 минут.</p>
+    <div class="right-wrapper right-wrapper--of-auto">
+        <div class="right-wrapper__header">
+            <div class="tabs-wrapper">
+                <h2 class="tabs-wrapper__tab">Виды посёлка</h2>
+                <h2 class="tabs-wrapper__tab tabs-wrapper__tab--active">Ход строительства</h2>
             </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Земля в статусе ИЖС</h2>
-                <p>Вы сами можете построить дом своей мечты с возможностью местной прописки. Мы продаём участки без подряда на строительство, но будем рады помочь Вам с выбором строителей.</p>
-            </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Центральные коммуникации</h2>
-                <p>В посёлок проведены газовые трубы, вода, канализация и свет, а дороги уложены твёрдым покрытием по финским технологиям.</p>
-            </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Безопасность в приоритете</h2>
-                <p>На охраняеую территорию участков попасть можно только по пропуску, а видеонаблюдение — круглосуточное</p>
-            </div>
-            <div class="bottom-text-block slider__item">
-                <h2>Детские и спортивные площадки</h2>
-                <p>Территория посёлка оборудована несколькими детскими площадками, а в Петергофе для Вас и Вашей семьи в Петергофе работают две детско-юношеских школы олимпийского резерва, ледовая арена и бассейн и конно-спортивная школа</p>
-            </div>
+            <form action="#" method="POST" id="calendar__form" class="calendar__form calendar calendar--white">
+                <label class="visually-hidden" for="calendar">Поле для выбора даты календаря</label>
+                <input type="text" id="calendar" name="calendar" class="calendar__input">
+                <div class="calendar__icon-wrapper">
+                    <svg class="calendar__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.166 2.50004H16.4993C16.7204 2.50004 16.9323 2.58784 17.0886 2.74412C17.2449 2.9004 17.3327 3.11236 17.3327 3.33337V16.6667C17.3327 16.8877 17.2449 17.0997 17.0886 17.256C16.9323 17.4122 16.7204 17.5 16.4993 17.5H1.49935C1.27834 17.5 1.06637 17.4122 0.910093 17.256C0.753813 17.0997 0.666016 16.8877 0.666016 16.6667V3.33337C0.666016 3.11236 0.753813 2.9004 0.910093 2.74412C1.06637 2.58784 1.27834 2.50004 1.49935 2.50004H4.83268V0.833374H6.49935V2.50004H11.4993V0.833374H13.166V2.50004ZM11.4993 4.16671H6.49935V5.83337H4.83268V4.16671H2.33268V7.50004H15.666V4.16671H13.166V5.83337H11.4993V4.16671ZM15.666 9.16671H2.33268V15.8334H15.666V9.16671Z" fill="black" fill-opacity="0.75"/>
+                    </svg>
+                </div>
+            </form>
         </div>
-        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        <div class="right-wrapper__body">
+            <section class="gallery">
+                <div class="gallery__month-wrapper">
+                    <p class="gallery__month-subtitle">
+                        Сентябрь
+                    </p>
+                    <ul class="img-list">
+                        <li class="img-list__item">
+                            <a href="img/gallery-item.jpg" class="img-list__link" data-fancybox="gallery">
+                                <img src="img/gallery-item.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="img-list__item">
+                            <a href="img/gallery-item.jpg" class="img-list__link" data-fancybox="gallery">
+                                <img src="img/gallery-item.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gallery__month-wrapper">
+                    <p class="gallery__month-subtitle">
+                        Август
+                    </p>
+                    <ul class="img-list">
+                        <li class="img-list__item">
+                            <a href="img/gallery-item.jpg" class="img-list__link" data-fancybox="gallery">
+                                <img src="img/gallery-item.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="img-list__item">
+                            <a href="img/gallery-item.jpg" class="img-list__link" data-fancybox="gallery">
+                                <img src="img/gallery-item.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gallery__month-wrapper">
+                    <p class="gallery__month-subtitle">
+                        Июль
+                    </p>
+                    <ul class="img-list">
+                        <li class="img-list__item">
+                            <a href="img/gallery-item.jpg" class="img-list__link" data-fancybox="gallery">
+                                <img src="img/gallery-item.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="img-list__item">
+                            <a href="img/gallery-item.jpg" class="img-list__link" data-fancybox="gallery">
+                                <img src="img/gallery-item.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </div>
         <div class="footer-wrapper">
             <a href="#" class="button button-area-selection button-white">Выбрать участок</a>
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/main.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script src="slick/slick.js"></script>
 </body>
 </html>
