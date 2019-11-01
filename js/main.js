@@ -78,7 +78,7 @@ $(document).ready(function () {
             dateFormat: "MM yyyy",
             view: 'months',
             minView: 'months',
-            orientation: "bottom left",
+            position: "bottom right",
             language: "ru",
             endDate: new Date(),
         });
