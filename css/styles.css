@@ -974,12 +974,12 @@ a {
     }
 }
 
-@media screen and (max-width: 978px) {
+@media screen and (max-width: 999px) {
     .left-navigation li:not(:last-child) {
         margin-right: 10px;
     }
     .main-navigation a {
-        font-size: 16px;
+        font-size: 14px;
     }
     .main-navigation .phone-block {
         width: 150px;
