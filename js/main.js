@@ -73,18 +73,16 @@ $(document).ready(function () {
             $(".logo-wrapper").css("z-index", "10");
         }
     });
-    $('#calendar').datepicker({
-        dateFormat: "MM yyyy",
-        view: 'months',
-        minView: 'months',
-        orientation: "bottom left",
-        language: "ru",
-        endDate: new Date(),
-    });
-
-
-
-
+    if ($('#calendar').length) {
+        $('#calendar').datepicker({
+            dateFormat: "MM yyyy",
+            view: 'months',
+            minView: 'months',
+            orientation: "bottom left",
+            language: "ru",
+            endDate: new Date(),
+        });
+    }
 });
 function resizewindow() {
     if(screen.width < 769) {
@@ -92,5 +90,5 @@ function resizewindow() {
     } else {
         $(document).find('.progress').css('width', 3 + 'px');
     }
-};
+}
 
