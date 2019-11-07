@@ -118,7 +118,7 @@ $(document).ready(function () {
             minView: 'months',
             position: "bottom right",
             language: "ru",
-            endDate: new Date(),
+            date: new Date()
         });
     }
 });

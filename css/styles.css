@@ -1078,10 +1078,15 @@ a {
     width: 100%;
 }
 
-.left-wrapper-text--absolute {
+.left-wrapper .left-wrapper-text--absolute {
     position: absolute;
     height: 70px;
     left: 20px;
+    margin: 0;
+    top: 200px;
+}
+.contacts .main-title {
+    margin: 0;
 }
 
 .ya-map-wrapper--full {
@@ -1163,6 +1168,17 @@ a {
 .fancybox-thumbs__list a:before {
     border-color: #157AB5 !important;
 }
+.location > .right-wrapper {
+    align-self: stretch;
+    max-height: 100vh;
+}
+.location .footer-wrapper {
+    margin: 35px 0 25px 0;
+}
+.ya-map-wrapper {
+    flex: 1;
+    height: calc(100vh - 140px - 84px);
+}
 @media screen and (max-width: 1600px) {
     .promo__item {
         width: calc(100% / 2 - 20px);
@@ -1192,6 +1208,10 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+    .location > .right-wrapper {
+        align-self: stretch;
+        max-height: none;
+    }
     .img-list__link img {
         width: 100%;
     }
@@ -1510,7 +1530,7 @@ a {
         height: 100% !important;
     }
     .ya-map-wrapper {
-        height: 30vh;
+        height: 50vh;
     }
 
     .bottom-contacts-block {
@@ -1527,12 +1547,16 @@ a {
         font-size: 24px;
         line-height: 150%;
         color: #157AB5;
-        margin-top: 10px;
+        margin: 60px 0 40px 0;
+        padding: 20px 0 0 0;
+        border-top: 0.5px solid rgba(0, 0, 0, 0.3);
     }
 
     .bottom-contacts-block__item {
         position: relative;
-        margin: 25px 0;
+        margin: 0;
+        padding: 0;
+        line-height: 150%;
     }
 
     .bottom-contacts-block__item {
@@ -1544,10 +1568,16 @@ a {
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-        top: 50%;
+        top: 15px;
         left: 0;
     }
-
+    .bottom-contacts-block__item--botmg {
+        margin-bottom: 30px;
+    }
+    .bottom-contacts-block__item--bus span {
+        display: block;
+        margin-bottom: 20px;
+    }
     .left-wrapper-text__location-item {
         display: none;
     }
@@ -1765,9 +1795,9 @@ a {
         flex-direction: column;
         background-size: cover;
     }
-
-
-
+    .ya-map-wrapper {
+        height: 30vh;
+    }
     .features .left-wrapper {
         padding: 0;
         position: relative;
@@ -1957,6 +1987,7 @@ a {
 
     .bottom-contacts-block__item {
         font-size: 14px;
+        line-height: 150%;
     }
 
     .border-bottom-visible--last {
