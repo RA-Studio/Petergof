@@ -69,18 +69,42 @@ $(document).ready(function () {
             swipe: false,
         });
     }
+    let modalMenu = $(".menu-wrapper__modal-menu");
+    let menuWrapper = $(".menu-wrapper");
+    let menuWrapperBg = $(".menu-wrapper__bg");
 
     $( ".hamburger-header" ).click(function() {
-        let modalMenu = $(".modal-menu");
-        console.log(modalMenu);
         modalMenu.toggleClass( "flex" );
-        $( ".modal-menu .hamburger" ).toggleClass( "is-active" );
+        menuWrapper.toggleClass( "block" );
+        menuWrapperBg.toggleClass( "block" );
+        $( ".menu-wrapper__modal-menu .hamburger" ).toggleClass( "is-active" );
+
         if (modalMenu.hasClass("flex") && $(window).width() < 500) {
             $(".logo-wrapper").css("z-index", "0");
+            $(".right-wrapper").css("display", "none");
+            $(".left-wrapper").css("display", "none");
+        } else if (modalMenu.hasClass("flex") && $(window).width() < 769) {
+            $(".right-wrapper").css("display", "none");
+            $(".left-wrapper").css("display", "none");
         } else {
             $(".logo-wrapper").css("z-index", "10");
+            $(".right-wrapper").css("display", "flex");
+            $(".left-wrapper").css("display", "flex");
         }
     });
+    jQuery(function($){
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            if (!modalMenu.is(e.target) // если клик был не по нашему блоку
+                && modalMenu.has(e.target).length === 0 && modalMenu.hasClass('flex')) { // и не по его дочерним элементам
+                modalMenu.toggleClass( "flex" );
+                menuWrapper.toggleClass( "block" );
+                menuWrapperBg.toggleClass( "block" );
+                $( ".menu-wrapper__modal-menu .hamburger" ).toggleClass( "is-active" );
+            }
+        });
+    });
+
+
     if ($('#calendar').length) {
         $('#calendar').datepicker({
             dateFormat: "MM yyyy",
