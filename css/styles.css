@@ -130,7 +130,9 @@ a {
 .inner-wrapper .right-wrapper {
     overflow: auto;
 }
-
+.features .right-wrapper {
+    overflow: hidden;
+}
 .modal-menu {
     background-color: #FCFCFC;
     position: absolute;
@@ -248,6 +250,10 @@ a {
     -ms-flex-pack: justify;
     justify-content: space-between;
     width: 59%;
+
+}
+.inner-wrapper .main-navigation-wrapper {
+    background: #FCFCFC;
 }
 
 .main-navigation-wrapper p {
@@ -557,7 +563,7 @@ a {
 
 .features .left-wrapper-text {
     position: absolute;
-    z-index: 999;
+    z-index: 1;
     margin-top: 300px;
     margin-left: 20px;
 }
