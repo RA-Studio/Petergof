@@ -45,7 +45,14 @@ $(document).ready(function () {
                     breakpoint: 769,
                     settings: {
                         arrows: true,
-                        vertical: false
+                        vertical: true
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        arrows: false,
+                        vertical: true
                     }
                 }
 

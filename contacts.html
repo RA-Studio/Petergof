@@ -19,7 +19,7 @@
         <div class="top-block">
             <div class="phone-block">
                 <p class="phone-block__subtitle">
-                    +7(812) 906-25-25
+                    +7 (812) 906-25-25
                 </p>
                 <p class="phone-block__time">
                     10:00 - 18:45
@@ -111,7 +111,7 @@
                 <div class="main-navigation-right-block">
                     <div class="phone-block">
                         <p class="phone-block__subtitle">
-                            +7(812) 906-25-25
+                            +7 (812) 906-25-25
                         </p>
                         <p class="phone-block__time">
                             10:00 - 18:45
@@ -126,29 +126,83 @@
             </div>
         </nav>
     </header>
-    <div class="left-wrapper left-wrapper--contacts left-wrapper--mgt-180">
+    <div class="left-wrapper left-wrapper--contacts left-wrapper--mgt-200">
         <div class="ya-map-wrapper ya-map-wrapper--full">
             <div id="ya-map" class="ya-map" style="width: 100%; height: 100%">
                 <script>
                     ymaps.ready(init);
 
-                    function generateHtml(imgSrc, text) {
+                    /*function generateHtml(imgSrc, text) {
                         return [
                             '<img src="'+imgSrc+'" alt=""/>',
                             '<p>'+text+'</p>',
                         ].join('');
-                    }
+                    }*/
 
                     function init(){
                         var myMap;
 
+                        $(window).resize(function () {
+                            if ($(window).width() < 500) {
+                                myMap.setCenter([59.86,29.85], 10);
+                            } else {
+                                myMap.setCenter([59.86,29.85], 13)
+                            }
+                        });
                         myMap = new ymaps.Map("ya-map", {
-                            center: [59.865,29.880],
+                            center: [59.86,29.85],
                             zoom: 13,
-                            controls: []
+                            controls: [],
+                        }, {
+                            autoFitToViewport: 'always'
+                        });
+                        if (screen.width < 500) {
+                            myMap.setCenter([59.86,29.85], 10);
+                        }
+
+                        var myPolygon = new ymaps.GeoObject({
+                            geometry: {
+                                // Тип геометрии - "Многоугольник".
+                                type: "Polygon",
+                                // Указываем координаты вершин многоугольника.
+                                coordinates: [
+                                    // Координаты вершин внешнего контура.
+                                    [
+                                        [59.859474528683975,29.819959710646973],
+                                        [59.86315463126042,29.826954911757824],
+                                        [59.8619567541524,29.834465096999512],
+                                        [59.860308378861404,29.831756149042292],
+                                        [59.85729715771651,29.8386011464483],
+                                        [59.85485776016711,29.839244876611875],
+                                        [59.858797406019896,29.825640712488333],
+                                    ]
+                                ],
+                                // Задаем правило заливки внутренних контуров по алгоритму "nonZero".
+                                fillRule: "nonZero"
+                            },
+                            // Описываем свойства геообъекта.
+                            properties:{
+                                // Содержимое балуна.
+                                balloonContent: "Усадьбы в Петергофе"
+                            }
+                        }, {
+                            // Описываем опции геообъекта.
+                            // Цвет заливки.
+                            fillColor: '#A1CFF0',
+                            // Цвет обводки.
+                            strokeColor: '#157AB5',
+                            // Общая прозрачность (как для заливки, так и для обводки).
+                            // opacity: 0.5,
+                            // Ширина обводки.
+                            strokeWidth: 1,
+                            // Стиль обводки.
+                            strokeStyle: 'solid'
                         });
 
-                        var BalloonContentLayout = ymaps.templateLayoutFactory.createClass([
+                        myMap.geoObjects
+                            .add(myPolygon)
+
+                        /*var BalloonContentLayout = ymaps.templateLayoutFactory.createClass([
                             '<div class="map-popup-wrapper">',
                             '<a class="map-popup-close" href="#"></a>',
                             '{{ properties.balloonContent|raw }}',
@@ -174,7 +228,7 @@
                             {
                                 balloonContent: generateHtml('img/troitskaya-balloon.jpg', 'Троицкая гора')
                             },
-                            { /*iconLayout: 'default#image',*/
+                            { /!*iconLayout: 'default#image',*!/
                                 iconImageSize: [40, 51],
                                 iconImageOffset: [-25, -30],
                                 balloonLayout: "default#imageWithContent",
@@ -182,7 +236,7 @@
                                 balloonContentLayout: BalloonContentLayout,
                                 balloonShadow: false,
                                 preset: 'islands#greenMountainIcon',
-                                /*iconColor: 'yellow'*/
+                                /!*iconColor: 'yellow'*!/
                             });
 
                         const oldPetergof = new ymaps.Placemark([59.87965575822228,29.86235349999998],
@@ -204,7 +258,7 @@
                             balloonContentBody: "Общеобразовательная школа;\n" +
                                 "ул. Шахматова, 10, корп. 1, Петергоф, Россия",
                         }, {
-                            /*// Опции.
+                            /!*!// Опции.
                                     // Необходимо указать данный тип макета.
                                     iconLayout: 'default#imageWithContent',
                                     // Своё изображение иконки метки.
@@ -215,16 +269,16 @@
                                     // её "ножки" (точки привязки).
                                     iconImageOffset: [-29, -38],
                                     // Смещение слоя с содержимым относительно слоя с картинкой.
-                                    iconContentOffset: [15, 15],*/
+                                    iconContentOffset: [15, 15],*!/
                             iconCaption: 'Очень длиннный, но невероятно интересный текст',
                             preset: 'islands#pinkFamilyCircleIcon',
-                        });
+                        });*/
 
 
-                        myMap.geoObjects
+                        /*myMap.geoObjects
                             .add(troitskayaMountain)
                             .add(oldPetergof)
-                            .add(school567)
+                            .add(school567)*/
 
                     }
                 </script>
