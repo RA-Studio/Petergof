@@ -40,7 +40,6 @@ $(document).ready(function () {
             infinite: false,
             dots: false,
             asNavFor: slider2,
-            adaptiveHeight: true,
             responsive: [
                 {
                     breakpoint: 769,
@@ -53,7 +52,8 @@ $(document).ready(function () {
                     breakpoint: 500,
                     settings: {
                         arrows: false,
-                        vertical: true
+                        vertical: true,
+                        adaptiveHeight: true
                     }
                 }
 

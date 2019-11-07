@@ -1624,4 +1624,7 @@ a {
     .right-wrapper__body {
         margin-bottom: 0;
     }
+    .inner-wrapper .slider-wrapper .slick-slide {
+        height: 337px;
+    }
 }
