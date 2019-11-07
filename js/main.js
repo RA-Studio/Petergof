@@ -9,7 +9,13 @@ $(document).ready(function () {
         const slider = $('.slider-wrapper');
         const slider2 = $('.left-wrapper-slider');
         const progressBar = $('.progress');
-        progressBar.css('background-size', '100%' + 100 / sliderCount + '%');
+
+        if (screen.width > 768) {
+            progressBar.css('background-size', '100%' + 100 / sliderCount + '%');
+        } else {
+            progressBar.css('background-size', 100 / sliderCount + '%' + '100%');
+        }
+
 
         slider.on('wheel', (function(e) {
             e.preventDefault();
